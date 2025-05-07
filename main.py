@@ -1,9 +1,8 @@
 from typing import List
 
-def write_file_list(file_list: List[str], path: str) -> None:
-    """Writes a list of strings to a file, each string on a new line"""
-    with open(path, "w") as f:
-        for file in file_list:
-            f.write(file + "
+def path_to_file_list(path: str) -> List[str]:
+    """Reads a file and returns a list of lines in the file"""
+    lines = open(path, "r").read().split("
 ")
+    return lines
 
